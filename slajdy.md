@@ -5,7 +5,7 @@ class: center, middle
 
 ---
 
-## Funkcje do przetwarzania list
+# Funkcje do przetwarzania list
 
 Najważniejsze to:
 
@@ -48,6 +48,14 @@ Uwaga: czy mecz który nie ma jeszcze wyniku (będzie jutro) to remis?
 
 Otwórz plik `zadania/1_filter.js` i zaimplementuj brakującą funkcję.
 
+???
+
+```js
+const onlyDraw = (match = {}) => {
+    return match.scoreA && match.scoreA === match.scoreB
+}
+```
+
 ---
 
 ## Funkcja map()
@@ -84,4 +92,61 @@ Użyj predefiniowanych zmiennych `matches` oraz `cities` jako danych wejściowyc
 
 Otwórz plik `zadania/2_map.js` i zaimplementuj brakującą funkcję.
 
+???
+
+```js
+const addCitySuffix = name => name + " " + cities[name];
+const appendCityNameToTeams = match => ({
+  ...match,
+  teamA: addCitySuffix(match.teamA),
+  teamB: addCitySuffix(match.teamB)
+});
+```
+
 ---
+
+## Funkcja reduce()
+
+Funkcja `reduce()` służy do redukcji listy do jednej wartości.
+
+```
+arr.reduce(callback( accumulator, currentValue[, index[, array]] )[, initialValue])
+```
+
+Przykład:
+
+```js
+const cart = [
+    { name: "Microphone", price: 50 },
+    { name: "Headphones", price: 75 }
+];
+const shipping = 10;
+
+const total = cart.reduce((accumulator, item) => accumulator += item.price, shipping);
+```
+
+---
+
+## Zadanie 3: reduce() jako suma
+
+Napisz funckję reducera która zwróci ile goli padło w całym turnieju.
+
+Uwaga na mecz który jeszcze nie ma wyniku!
+
+???
+
+```js
+const sumScores = (total, match = {}) => {
+  const goals = match.scoreA + match.scoreB
+  return total += Number.isInteger(goals) ? goals : 0;
+}
+```
+
+---
+
+# Kompozycja funkcji
+
+* pure function
+* referential integrity
+* partial application
+* currying
