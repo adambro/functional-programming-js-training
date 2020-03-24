@@ -40,7 +40,7 @@ Zadanie: Nazwy drużyn wyświetlane w TV muszą zawierać nazwę sponsora. Nap
 
 ### Refleksja
 
-* Jak porównasz podejście funkcyjne z użyciem map() do pojejścia proceduralnego z użyciem for/while?
+* Jak porównasz podejście funkcyjne z użyciem map() do podejścia proceduralnego z użyciem for/while?
 * Co sprawiało trudność w funkcyjnym podejściu?
 
 PYTANIE: Tu dać slajd z najważniejszymi zaletami? Np. że w funkcji map() zajmuję się pojedyńczą wartością? Takie podsumowanie?
