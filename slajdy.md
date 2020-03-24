@@ -18,6 +18,38 @@ W szczgólności `map` i `reduce` która są podstawą do budowania pozostałych
 
 ---
 
+## Funkcja filter()
+
+Funkcja `filter()` służy do odfiltrowania elementów listy.
+Jako argument podajemy funkcję która zwraca `true` jeśli element ma znaleźć się
+na nowej liście, albo `false` jeśli nie.
+
+Funkcja może przyjąć do 3 argumentów: `element, index, array`, ale tylko pierwszy jest wymagany.
+
+```js
+let newArray = arr.filter(callback(element[, index, [array]])[, thisArg])
+```
+
+Przykład:
+
+```js
+let integers = [0, 1, 1.7, '0'].filter(Number.isInteger);
+```
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+---
+
+## Zadanie 1: filter()
+
+Stwórz listę meczów, które zakończyły się remisem.
+
+Uwaga: czy mecz który nie ma jeszcze wyniku (będzie jutro) to remis?
+
+Otwórz plik `zadania/1_filter.js` i zaimplementuj brakującą funkcję.
+
+---
+
 ## Funkcja map()
 
 Funkcja `map()` służy do przetwarzania jednej listy w drugą.
@@ -44,43 +76,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ---
 
-## Zadanie 1: map()
+## Zadanie 2: map()
 
 Nazwy drużyn wyświetlane w TV muszą zawierać nazwę miasta.
 Napisz funckcję która doda nazwę miasta i zwróci nową listę meczów.
 Użyj predefiniowanych zmiennych `matches` oraz `cities` jako danych wejściowych.
 
-Otwórz plik `zadania/1_map.js` i zaimplementuj brakującą funkcję.
+Otwórz plik `zadania/2_map.js` i zaimplementuj brakującą funkcję.
 
 ---
-
-## Funkcja filter()
-
-Funkcja `filter()` służy do odfiltrowania elementów listy.
-Jako argument podajemy funkcję która zwraca `true` jeśli element ma znaleźć się
-na nowej liście, albo `false` jeśli nie.
-
-Funkcja może przyjąć do 3 argumentów: `element, index, array`, ale tylko pierwszy jest wymagany.
-
-```js
-let newArray = arr.filter(callback(element[, index, [array]])[, thisArg])
-```
-
-Przykład:
-
-```js
-let integers = [0, 1, 1.7, '0'].filter(Number.isInteger);
-```
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-
----
-
-## Zadanie 2: filter()
-
-Stwórz listę meczów, które zakończyły się remisem.
-
-Uwaga: czy mecz który nie ma jeszcze wyniku (będzie jutro) to remis?
-
-Otwórz plik `zadania/2_filter.js` i zaimplementuj brakującą funkcję.
-
