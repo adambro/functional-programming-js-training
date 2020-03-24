@@ -105,11 +105,31 @@ const appendCityNameToTeams = match => ({
 
 ---
 
+## Refleksja nad filter() i map()
+
+* Jak porównasz podejście funkcyjne z użyciem map() do podejścia proceduralnego z użyciem for/while?
+* Co sprawiało trudność w funkcyjnym podejściu?
+
+???
+Zadaj pytania uczestnikom.
+Postaraj się wyciągnąć odpowiedzi.
+
+---
+
+## Efekty korzystania z filter() i map()
+
+* Funkcja przetwarza zawsze jeden element z listy.
+* Testy możemy napisać tylko dla ww. prostej funkcji. Nie trzeba testować `map()`!
+* Unikamy przypadkowych zmian wejściowej listy, które mogą się zdarzyć w `for` lub `forEach`.
+* Mamy kopię danych, ale zazwyczaj to nie jest problem wydajnościowy.
+
+---
+
 ## Funkcja reduce()
 
 Funkcja `reduce()` służy do redukcji listy do jednej wartości.
 
-```
+```js
 arr.reduce(callback( accumulator, currentValue[, index[, array]] )[, initialValue])
 ```
 
