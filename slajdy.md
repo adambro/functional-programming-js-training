@@ -122,6 +122,7 @@ Postaraj się wyciągnąć odpowiedzi.
 * Testy możemy napisać tylko dla ww. prostej funkcji. Nie trzeba testować `map()`!
 * Unikamy przypadkowych zmian wejściowej listy, które mogą się zdarzyć w `for` lub `forEach`.
 * Mamy kopię danych, ale zazwyczaj to nie jest problem wydajnościowy.
+* `filter()` to specyficzna wersja `map()`.
 
 ---
 
@@ -163,6 +164,37 @@ const sumScores = (total, match = {}) => {
 ```
 
 ---
+
+## Funkcja reduce() do budowy obiektu z listy
+
+Efektem reduce nie musi być liczba, ale może być też obiekt.
+Często przydaje się do stworzenia mapy z listy.
+
+Przykład lokalnego cache danych z bazy:
+
+```js
+const entities = [
+    { id: 10, name: "One", price: 100 },
+    { id: 20, name: "Two", price: 200 },
+    { id: 30, name: "Czy", price: 300 }
+];
+
+const keyVal = (dict, item) => {
+    const key = item["id"];
+    return Object.assign(dict, { [key]: item })
+};
+const hashmap = entities.reduce(keyVal, {});
+```
+
+???
+To jest prymitywne rozwiązanie, ale działa. Wrócimy do niego później, przy kompozycji.
+
+---
+
+## Zadanie 4: reduce() do budowy obiektu
+
+
+
 
 # Kompozycja funkcji
 
