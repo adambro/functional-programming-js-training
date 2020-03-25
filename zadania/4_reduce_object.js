@@ -11,8 +11,8 @@ const matches = [
  * @param {object} match
  * @returns {object} Example:
  * {
- *   Arsenal: { scored: 3, lost: 0 },
- *   City: { scored: 4, lost: 2 },
+ *   Arsenal: 3,
+ *   City: 4,
  *   ...
  * }
  */
@@ -25,3 +25,7 @@ console.log(table);
 
 // Tests for the output.
 console.assert(typeof table === "object", "Table must be an object.");
+console.assert(table["Arsenal"] === 3, "Arsenal scored 3 goals.");
+console.assert(table["Chelsea"] === 0, "Chelsea scored 0 goals.");
+console.assert(table["City"] === 4, "City scored 4 goals.");
+console.assert(table["United"] === 2, "United scored 2 goals.");

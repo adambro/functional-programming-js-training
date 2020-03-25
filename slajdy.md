@@ -4,6 +4,24 @@ class: center, middle
 # Programowanie funkcyjne w JS
 
 ---
+## Program szkolenia
+
+* Przetwarzenie list: `filter()`, `map()`.
+* Konwersja list do pojedyńczej wartości: `reduce()`.
+* Kompozycja funkcji.
+* Czyste fukcje.
+* Hight order functions.
+* Immutability. Dlaczego to jest ważne.
+
+---
+## Czego nie będzie?
+
+* Category theory
+* Monads
+* Haskell
+* Math
+
+---
 
 # Funkcje do przetwarzania list
 
@@ -193,9 +211,32 @@ To jest prymitywne rozwiązanie, ale działa. Wrócimy do niego później, przy 
 
 ## Zadanie 4: reduce() do budowy obiektu
 
+Zbuduj prostą tabelę ligową bazującą na ilości strzelonych goli.
 
+Uwaga na mecz który się nie odbył.
+Wyniki obu drużyn z każdego meczu muszą zostać policzone.
+Użyj `Object.assign()` z przykładu.
 
+Szczegóły w JS Doc w pliku `zadania/4_reduce_object.js`.
 
+???
+```js
+const makeTable = (table = {}, match = {}) => {
+  if (match.scoreA === undefined || match.scoreB === undefined) {
+    return table;
+  };
+
+  const totalA = table[match.teamA] || 0;
+  const totalB = table[match.teamB] || 0;
+  const results = {
+    [match.teamA]: match.scoreA + totalA,
+    [match.teamB]: match.scoreB + totalB,
+  };
+  return Object.assign(table, results);
+}
+```
+
+---
 # Kompozycja funkcji
 
 * pure function
