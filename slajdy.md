@@ -70,7 +70,8 @@ Otwórz plik `zadania/1_filter.js` i zaimplementuj brakującą funkcję.
 
 ```js
 const onlyDraw = (match = {}) => {
-    return match.scoreA && match.scoreA === match.scoreB
+    const hasResult = match.scoreA !== undefined && match.scoreB !== undefined;
+    return hasResult && match.scoreA === match.scoreB
 }
 ```
 

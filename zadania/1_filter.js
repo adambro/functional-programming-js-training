@@ -16,9 +16,9 @@ const onlyDraw = (match = {}) => {
 }
 
 const matchesDrawn = matches.filter(onlyDraw);
-console.table(matchesForTv);
+console.table(matchesDrawn);
 
 // Tests for the output.
 
-console.assert(matchesForTv.length === 1, "One match was draw.");
-console.assert(matchesForTv[0].date === "2020-04-01", "United - City was draw");
+console.assert(matchesDrawn.length === 1, "One match was draw.");
+console.assert(matchesDrawn[0].date === "2020-04-01", "United - City was draw");
