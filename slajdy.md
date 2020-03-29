@@ -6,10 +6,30 @@ class: center, middle
 Adam Brodziak
 
 ---
+## Jak szkolenie będzie wyglądać
+
+* Slajdy w Remark.js <3
+* Czat w MS Teams.
+* Dzielenie ekranu.
+* Zadania.
+* Wysyłanie rozwiązań.
+* Zgłaszanie pytań i problemów.
+
+???
+Pytania piszcie na czacie. Będę go sprawdzał.
+
+Przy problemach dam opcję prezentowania ekranu.
+Jak nie chcesz prezentować w grupie, to zrobimy 1:1 ale w osobnym callu. Będę musiał wtedy wyjść z głównego video.
+
+**Pokaż jak wrzucić kod!**
+
+Przedstaw się i pokaż jaką masz tapetę :)
+
+---
 ## Program szkolenia
 
 1. Funkcje i typy w JavaScript.
-2. Przetwarzenie list: `filter()`, `map()`.
+2. Przetwarzenie list: `filter()` oraz `map()`.
 3. Konwersja list do pojedyńczej wartości: `reduce()`.
 * Kompozycja funkcji.
 * Czyste fukcje.
@@ -23,6 +43,14 @@ Adam Brodziak
 * Haskell
 * Mathematics
 * Category theory
+* Pattern matching
+
+???
+Rzeczy ważne i rozwijające. Nie są niezbędne żeby zacząć.
+
+Coś jeszcze przychodzi wam do głowy? Może też nie będzie ;)
+
+Jak ktoś jest zawiedziony to może opuścić szkolenie.
 
 ---
 # 1. Funkcje i typy w JavaScript.
@@ -33,6 +61,9 @@ Aż 3 różne sposoby na deklarację funkcji, ale tyko jeden rządzi.
 
 JavaScript ma typy danych i warto je znać.
 
+???
+Repetytorium z JS na początek, żebyśmy startowwali z tego samego poziomu.
+
 ---
 ## Funkcje w JS
 
@@ -41,10 +72,14 @@ JavaScript ma typy danych i warto je znać.
 * Brak ścisłego sprawdzania liczby parametrów.
   * Jeśli podamy więcej argumentów niż parametrów to nadmiarowe są ignorowane.
   * Jeśli podamy mniej argumentów niż parametrów to brakujące będą `undefined`.
+  * Przydatne do partial application i currying (więcej o tym później).
 * Standard ES2015 wprowadził domyślne wartości parametrów funkcji.
 * JS runtime jest oparty o stos, więc istnieje limit wywołań fukcji.
   * Trzeba uważać na błąd przepełniania stosu przy rekurencji.
   * Tail call optimization jest [nadal w powijakach](https://2ality.com/2015/06/tail-call-optimization.html).
+
+???
+To są cechy czym fukcje w JS różnią się od funkcji w innych językach. Typowe WTF.
 
 ---
 ## Deklarowanie funkcji
@@ -89,12 +124,33 @@ Trzeci sposób jest preferowany, bo [rozwiązuje niektóre WTF z funkcjami](http
 class: middle
 # Co to jest programowanie funkcyjne?
 
+---
+## Functional Programming
+
 Programowanie funkcyjne to programowanie z użyciem funkcji.
 
 Można się rozejść. Dziękuję za uwagę ;)
 
+???
+Zestaw technik i wzorców (jak wzorce projektowe) które są użyteczne.
+
+Ciekawostka: FP jest starsze niż OOP. OOP wygrało bo pamięć była droga.
+
+Teraz FP wraca, bo Mhz już nie rośnie, a liczba rdzeni tak.
+
 ---
-# Funkcje do przetwarzania list
+## Functional Programming is a...
+
+PARADIGM
+
+CODING STYLE
+
+MINDSET
+
+[Funkcyjny frontend | Krzysztof Jendrzyca | FDD 2016](https://www.youtube.com/watch?v=UUeq8J9l0HI)
+
+---
+# 2. Funkcje do przetwarzania list
 
 Najważniejsze to:
 
@@ -137,17 +193,7 @@ Uwaga: czy mecz który nie ma jeszcze wyniku (będzie jutro) to remis?
 
 Otwórz plik `zadania/1_filter.js` i zaimplementuj brakującą funkcję.
 
-???
-
-```js
-const onlyDraw = (match = {}) => {
-    const hasResult = match.scoreA !== undefined && match.scoreB !== undefined;
-    return hasResult && match.scoreA === match.scoreB
-}
-```
-
 ---
-
 ## Funkcja map()
 
 Funkcja `map()` służy do przetwarzania jednej listy w drugą.
@@ -182,19 +228,7 @@ Użyj predefiniowanych zmiennych `matches` oraz `cities` jako danych wejściowyc
 
 Otwórz plik `zadania/2_map.js` i zaimplementuj brakującą funkcję.
 
-???
-
-```js
-const addCitySuffix = name => name + " " + cities[name];
-const appendCityNameToTeams = match => ({
-  ...match,
-  teamA: addCitySuffix(match.teamA),
-  teamB: addCitySuffix(match.teamB)
-});
-```
-
 ---
-
 ## Refleksja nad filter() i map()
 
 Jak porównasz podejście funkcyjne z użyciem map() do podejścia proceduralnego z użyciem for/while?
@@ -216,7 +250,11 @@ Postaraj się wyciągnąć odpowiedzi.
 * `filter()` to specyficzna wersja `map()`.
 
 ---
+# 3. Konwersja listy do pojedyńczej wartości
 
+TODO
+
+---
 ## Funkcja reduce()
 
 Funkcja `reduce()` służy do redukcji listy do jednej wartości.
@@ -244,15 +282,6 @@ const total = cart.reduce((accumulator, item) => accumulator += item.price, ship
 Napisz funckję reducera która zwróci ile goli padło w całym turnieju.
 
 Uwaga na mecz który jeszcze nie ma wyniku!
-
-???
-
-```js
-const sumScores = (total, match = {}) => {
-  const goals = match.scoreA + match.scoreB
-  return total += Number.isInteger(goals) ? goals : 0;
-}
-```
 
 ---
 
@@ -292,22 +321,6 @@ Użyj `Object.assign()` z przykładu.
 
 Szczegóły w JS Doc w pliku `zadania/4_reduce_object.js`.
 
-???
-```js
-const makeTable = (table = {}, match = {}) => {
-  if (match.scoreA === undefined || match.scoreB === undefined) {
-    return table;
-  };
-
-  const totalA = table[match.teamA] || 0;
-  const totalB = table[match.teamB] || 0;
-  const results = {
-    [match.teamA]: match.scoreA + totalA,
-    [match.teamB]: match.scoreB + totalB,
-  };
-  return Object.assign(table, results);
-}
-```
 
 ---
 ## Refleksja nad reduce()
@@ -321,8 +334,9 @@ Jak wcześniej radziliście sobie z np. obliczaniem sumy?
 
 * Funkcja `reduce()` podstawowe i potężne narzędzie do przetwarzania list.
 * Wydaje się skomplikowane, bo to niskopoziomowe narzędzie.
-* Resultatem `reduce()` może być wartość dowolnego typu, nawet array.
+* Rezultatem `reduce()` może być wartość dowolnego typu, nawet array.
 * Tak, `map()` da się zbudować z użyciem `reduce()`.
+* `reduce()` rzadko będzie w kodzie biznesowym, raczej w fukcjach składowych.
 * Sprawne użycie `reduce()` wymaga przyzwyczajenia.
 
 ---
@@ -334,6 +348,63 @@ TODO:
 * referential integrity
 * partial application
 * currying
+
+---
+## Kod deklaratywny vs imperatywny
+
+Programowanie funkcyjne preferuje deklaratywne podejście do kodu.
+Oznacza to że logika jest wyrażona bez użycia instrukcji sterujących.
+
+Kod imperatywny zawera mnóstwo instrukcji opisujących poszczególne kroki,
+niezbędne w celu osiągnięcia rezultatu. Opisuje jak coś zrobić.
+
+Kod deklaratywny ukrywa instrukcje jak osiągnać cel, zamiast tego opisuje
+przepływ danych. Co zrobić, nie jak.
+
+---
+## Obliczanie sumy imperatywnie
+
+```js
+let goals = 0;
+for (match of matches) {
+    if (match.scoreA === undefined || match.scoreB === undefined) {
+        continue;
+    };
+    goals += match.scoreA;
+    goals += match.scoreB;
+}
+```
+
+---
+## Instrukcja vs Wyrażenie
+
+Kod imperatywny często wymaga użycia instrukcji.
+Instrukcja (statement) to kawałek kodu który wykonuje jakąś akcję.
+Przykłady to `if`, `throw`, `for`, `continue`, etc.
+
+Kod deklaratywny polega na wyrażeniach.
+Wyrażenie (expression) to kawałek kodu którego rezultatem jest jakaś wartość.
+Wyrażenia to zazwyczaj kombinacja wywołań funkcji, wartości i operatorów,
+które są wywoływane w celu wyprodukowania wartości. Przykłady wyrażeń:
+
+```js
+2 * 2
+doubleMap([2, 3, 4])
+Math.max(4, 3, 2)
+```
+
+???
+Zazwyczaj takie wyrażenia będą przypisane do jakiegoś identyfikatora (zmiennej),
+zwracane w funckji, albo przekazywane do funkcji. Zanim to się jednak stanie,
+wyrażenie jest najpierw ewaluaowane (wykonywane), a przekazywany jest rezultat.
+
+---
+## Zadanie 5: Wyrażenia
+
+Zamiast używać instrukcji `if` użyj wyrażnia do filtrowania wyników.
+Dodatkowo nazwij swoje wyrażenia odpowiednio i zdefiniuj jako osobne funkcje.
+
+W rezultacie powinny powstać minimum 2 funkcje.
 
 ---
 ## Function composition
