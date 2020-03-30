@@ -31,10 +31,9 @@ Przedstaw się i pokaż jaką masz tapetę :)
 1. Funkcje i typy w JavaScript.
 2. Przetwarzenie list: `filter()` oraz `map()`.
 3. Konwersja list do pojedyńczej wartości: `reduce()`.
-* Kompozycja funkcji.
-* Czyste fukcje.
-* High-order functions.
-* Immutability. Dlaczego to jest ważne.
+4. Kod deklaratywny vs imperatywny.
+5. Funkcje wyższego rzędu (high-order functions).
+6. Kompozycja funkcji.
 
 ---
 ## Czego nie będzie?
@@ -340,17 +339,7 @@ Jak wcześniej radziliście sobie z np. obliczaniem sumy?
 * Sprawne użycie `reduce()` wymaga przyzwyczajenia.
 
 ---
-# Kompozycja funkcji
-
-TODO:
-
-* pure function
-* referential integrity
-* partial application
-* currying
-
----
-## Kod deklaratywny vs imperatywny
+# 4. Kod deklaratywny vs imperatywny
 
 Programowanie funkcyjne preferuje deklaratywne podejście do kodu.
 Oznacza to że logika jest wyrażona bez użycia instrukcji sterujących.
@@ -360,20 +349,6 @@ niezbędne w celu osiągnięcia rezultatu. Opisuje jak coś zrobić.
 
 Kod deklaratywny ukrywa instrukcje jak osiągnać cel, zamiast tego opisuje
 przepływ danych. Co zrobić, nie jak.
-
----
-## Obliczanie sumy imperatywnie
-
-```js
-let goals = 0;
-for (match of matches) {
-    if (match.scoreA === undefined || match.scoreB === undefined) {
-        continue;
-    };
-    goals += match.scoreA;
-    goals += match.scoreB;
-}
-```
 
 ---
 ## Instrukcja vs Wyrażenie
@@ -399,6 +374,22 @@ zwracane w funckji, albo przekazywane do funkcji. Zanim to się jednak stanie,
 wyrażenie jest najpierw ewaluaowane (wykonywane), a przekazywany jest rezultat.
 
 ---
+## Obliczanie sumy imperatywnie
+
+```js
+let goals = 0;
+for (match of matches) {
+    if (match.scoreA === undefined || match.scoreB === undefined) {
+        continue;
+    };
+    goals += match.scoreA;
+    goals += match.scoreB;
+}
+```
+???
+Tam są aż 3 instrukcje!
+
+---
 ## Zadanie 5: Wyrażenia
 
 Zamiast używać instrukcji `if` użyj wyrażnia do filtrowania wyników.
@@ -407,7 +398,42 @@ Dodatkowo nazwij swoje wyrażenia odpowiednio i zdefiniuj jako osobne funkcje.
 W rezultacie powinny powstać minimum 2 funkcje.
 
 ---
-## Function composition
+# 5. Funkcje wyższego rzędu (high-order functions).
+
+Funkcje wyższego rzędu (high-order functions) to takie, które przyjmują funkcje
+jako parametr lub zwracają funkcje. Czesto używane do:
+
+* Tworzenia narzędzi które mogą działać na różnych typach danych (np. `map()`).
+* Abstrakcji lub izolacji akcji, efektów, lub przetwarzania asynchronicznego (callback, promise), etc.
+* Enkapsulacji stanu który musi być współdzielony między wywołaniami.
+* Budowa nowych obiektów i funkcji (factory pattern).
+
+---
+## Przykład funkcji zwracającej funkcję:
+
+```js
+/** Returns getter function that returns attribute value from object. */
+const prop = (key = "") => (obj = {}) => obj[key];
+
+const entities = [
+    { id: 10, name: "One", price: 100 },
+    { id: 20, name: "Two", price: 200 },
+    { id: 30, name: "Czy", price: 300 }
+];
+const getName = prop("name");
+const names = entities.map(getName);
+```
+
+---
+## Zadanie 6: map() z high-order function
+
+Stwórz funkcję, która będzie dodawała nazwę miasta tylko do jednego zespołu.
+Użyj fukcji wyższego rzędu żeby przekazać czy chodzi o `teamA` czy `teamB`.
+
+Dodatkowo ukryj listę miast, żeby nie była dostępna w całym module.
+
+---
+# 6. Kompozycja funkcji.
 
 Przykład cache ze wcześniejszego slajdu:
 
