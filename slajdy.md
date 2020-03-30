@@ -34,6 +34,7 @@ Przedstaw się i pokaż jaką masz tapetę :)
 4. Kod deklaratywny vs imperatywny.
 5. Funkcje wyższego rzędu (high-order functions).
 6. Kompozycja funkcji.
+7. Przydatne biblioteki i narzędzia.
 
 ---
 ## Czego nie będzie?
@@ -398,6 +399,13 @@ Dodatkowo nazwij swoje wyrażenia odpowiednio i zdefiniuj jako osobne funkcje.
 W rezultacie powinny powstać minimum 2 funkcje.
 
 ---
+## Refleksja nad wyrażeniami
+
+Jakie zalety widzicie przy używaniu wyrażeń zamiast instrukcji? Jakie wady?
+
+Co daje nazywanie wyrażen (przypisywanie do zmiennej czy funkcji)?
+
+---
 # 5. Funkcje wyższego rzędu (high-order functions).
 
 Funkcje wyższego rzędu (high-order functions) to takie, które przyjmują funkcje
@@ -433,6 +441,14 @@ Użyj fukcji wyższego rzędu żeby przekazać czy chodzi o `teamA` czy `teamB`
 Dodatkowo ukryj listę miast, żeby nie była dostępna w całym module.
 
 ---
+## Refleksja nad high order function
+
+Jakie zastosowania widzisz dla high order function?
+
+Czy widzisz możliwość zastosowanie high-order function w swojej pracy?
+Jakie przeszkody widzisz?
+
+---
 # 6. Kompozycja funkcji.
 
 Przykład cache ze wcześniejszego slajdu:
@@ -463,3 +479,8 @@ Normalnie użylibyśmy bibioteki, ale jesteśmy na szkoleniu po to żeby zrozumi
 Chodzi o to żeby napisać taki DSL na odpowiednim poziomie abstrakcji.
 
 ---
+# 7. Przydatne biblioteki i narzędzia.
+
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
+
+http://reactivex.io/learnrx/
