@@ -1,0 +1,12 @@
+{
+  "name": "functional-programming-js-training",
+  "version": "0.1.0",
+  "description": "Functional Programming in JavaScript training",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Adam Brodziak",
+  "license": "MIT"
+}
