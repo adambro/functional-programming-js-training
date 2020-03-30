@@ -6,6 +6,8 @@ const matches = [
   { date: "2020-04-03", teamA: "Chelsea", teamB: "Arsenal" },
 ];
 
+const compose = (...fns) => x => fns.reduceRight((y, f) => f(y), x);
+
 /**
  * Returns function that processes either `teamA` or `teamB`.
  */
@@ -20,7 +22,8 @@ const appendCity = () => {
   return;
 };
 
-const matchesForTv = matches;
+const appendCityBothTeams = compose();
+const matchesForTv = matches.map(appendCityBothTeams);
 console.table(matchesForTv);
 
 // Tests for the output.

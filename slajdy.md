@@ -440,6 +440,8 @@ Użyj fukcji wyższego rzędu żeby przekazać czy chodzi o `teamA` czy `teamB`
 
 Dodatkowo ukryj listę miast, żeby nie była dostępna w całym module.
 
+Możesz użyć `map()` dwa razy.
+
 ---
 ## Refleksja nad high order function
 
@@ -449,38 +451,101 @@ Czy widzisz możliwość zastosowanie high-order function w swojej pracy?
 Jakie przeszkody widzisz?
 
 ---
-# 6. Kompozycja funkcji.
+# 6. Kompozycja funkcji
 
-Przykład cache ze wcześniejszego slajdu:
+Kompozycja funkcji (functional composition) to łączenie funkcji w celu uzyskania
+innej funkcji. Kompozycja przypomina używanie pipe, np. w Bash.
+
+Mając funkcje `f` i `g` kompozycja `f(g(x))` będzie obliczone od wewnąrz na zewnątrz,
+inaczej od prawej do lewej strony. Zatem w kolejności:
+1. `x`
+2. `g`
+3. `f`
+
+Powyższa notacja jest bardzo zbliżona do algebraicznej (matematyka!).
+
+Kompozycja funkcji to fundament FP.
+
+---
+## Partial application & currying
+
+Partial application to przekazanie nie wszystkich wymaganych parametrów funkcji,
+gdzie w efekcie otrzymujemy nową funckję, która przyjmie brakujące parametry.
+
+Currying to specyficzna odmiana w FP, gdzie funkcje przyjmują tylko *jeden* argument,
+by koniec końców zwrócić wartość. Przykład:
 
 ```js
-const entities = [
-    { id: 10, name: "One", price: 100 },
-    { id: 20, name: "Two", price: 200 },
-    { id: 30, name: "Czy", price: 300 }
-];
-
-const keyVal = (dict, item) => {
-    const key = item["id"];
-    return Object.assign(dict, { [key]: item })
-};
-const hashmap = entities.reduce(keyVal, {});
+// add = a => b => Number
+const add = a => b => a + b;
+const sum = add(2)(3); // => 5
 ```
 
-Powyższe można osiągnąć używając biblioteki lodash:
+Powyższa funkcja jest ręcznie "przyprawiona", ale do tego są narzędzia.
+
+???
+Jak myślicie - po co coś takiego?
+
+---
+## Curry upraszcza kompozycję
+
+Zamiast pisać setki nawiasów w `f(g(x))` (jak w Lisp) możemy taką strukturę spłaszczyć.
 
 ```js
-_.groupBy(entities, "id");
+const compose = (f, g) => x => f(g(x));
+
+const g = n => n + 1;
+const f = n => n * 2;
+
+const h = compose(f, g);
+h(20);
 ```
 
 ???
-Kod poniżej jest czytelny, tak że nawet BA będzie mógł powiedzieć co tam się dzieje.
-Normalnie użylibyśmy bibioteki, ale jesteśmy na szkoleniu po to żeby zrozumieć jak to działa.
-Chodzi o to żeby napisać taki DSL na odpowiednim poziomie abstrakcji.
+Jaki będzie wynik? 42
 
 ---
-# 7. Przydatne biblioteki i narzędzia.
+## Dwie funkcje nie wystarczą
 
+Z pomocą przychodzi brat `reduce()`, czyli `reduceRight()`:
+
+```js
+const compose = (...fns) => x => fns.reduceRight((y, f) => f(y), x);
+
+const g = n => n + 1;
+const f = n => n * 2;
+
+const h = compose(f, g);
+h(20);
+```
+
+---
+## Zadanie 7: Użycie compose()
+
+Zbudouj złożenie funkcji dodającą nazwę miasta dla `teamA` i `teamB` za pomocą
+funkcji pomocniczej `compose()`.
+
+---
+# 7. Przydatne biblioteki i narzędzia
+
+Master the JavaScript Interview: What is Functional Programming?
 https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
 
+Curry and Function Composition
+https://medium.com/javascript-scene/curry-and-function-composition-2c208d774983
+
+Currying in JavaScript
+https://wsvincent.com/javascript-currying/
+
+Interactive Excersises in Functional Programming (and RxJS):
 http://reactivex.io/learnrx/
+
+Biblioteki:
+
+* Ramda.js
+* Lodash FP
+
+---
+# Dziękuję za uwagę
+
+Niech monada będzie z wami!
