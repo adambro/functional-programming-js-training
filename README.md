@@ -7,6 +7,8 @@ Testy są w tym samym pliku, wykonywane za każdym razem.
 
     node zadania/1_filter.js
 
+Do uruchomienia zadań niezbędny jest Node 10 lub nowszy.
+
 ### VS Code + Quokka.js
 
 Do odpalania zadań polecam Quokka.js - dodatek do VS Code:
