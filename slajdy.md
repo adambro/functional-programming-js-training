@@ -526,6 +526,19 @@ Zbudouj złożenie funkcji dodającą nazwę miasta dla `teamA` i `teamB` za po
 funkcji pomocniczej `compose()`.
 
 ---
+## Refleksja nad compose()
+
+Jak wrażenie o `compose()`? Wydaje się trudne, łatwe? Proste, skomplikowane?
+
+Jak porównacie użycie `compose()` z metod chaining (np. wielokrotne `map()`)?
+
+???
+Użycie `compose()` pozwala stworzyć złożoną funckję, która nadal przetwarza jeden rekord.
+
+Przy method chaining mamy wiele iteracji, więc gorszą wydajność.
+
+
+---
 # 7. Przydatne biblioteki i narzędzia
 
 Master the JavaScript Interview: What is Functional Programming?
@@ -539,6 +552,8 @@ https://wsvincent.com/javascript-currying/
 
 Interactive Excersises in Functional Programming (and RxJS):
 http://reactivex.io/learnrx/
+
+[Funkcyjny frontend | Krzysztof Jendrzyca | FDD 2016](https://www.youtube.com/watch?v=UUeq8J9l0HI)
 
 Biblioteki:
 
