@@ -3,7 +3,8 @@ const http = require('http');
 const port = process.env.PORT || 8000;
 
 http.createServer(function (req, res) {
-  fs.readFile(__dirname + req.url, function (err,data) {
+  const fileName = (req.url === '/') ? '/index.html' : req.url;
+  fs.readFile(__dirname + fileName, function (err,data) {
     if (err) {
       res.writeHead(404);
       res.end(JSON.stringify(err));
