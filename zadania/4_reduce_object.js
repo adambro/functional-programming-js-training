@@ -13,7 +13,8 @@ const matches = [
  * {
  *   Arsenal: 3,
  *   City: 4,
- *   ...
+ *   United: 2,
+ *   Chelsea: 0
  * }
  */
 const makeTable = (table = {}, match = {}) => {

@@ -340,6 +340,11 @@ Jak wcześniej radziliście sobie z np. obliczaniem sumy?
 * Sprawne użycie `reduce()` wymaga przyzwyczajenia.
 
 ---
+## map() i reduce() graficznie
+
+![map() and reduce() used to make a sandwitch](https://clojurebridgelondon.github.io/workshop/images/map-reduce-sandwich.png)
+
+---
 # 4. Kod deklaratywny vs imperatywny
 
 Programowanie funkcyjne preferuje deklaratywne podejście do kodu.
