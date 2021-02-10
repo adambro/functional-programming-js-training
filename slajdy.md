@@ -29,7 +29,7 @@ Przedstaw się i pokaż jaką masz tapetę :)
 ## Program szkolenia
 
 1. Funkcje i typy w JavaScript.
-2. Przetwarzenie list: `filter()` oraz `map()`.
+2. Przetwarzanie list: `filter()` oraz `map()`.
 3. Konwersja list do pojedyńczej wartości: `reduce()`.
 4. Kod deklaratywny vs imperatywny.
 5. Funkcje wyższego rzędu (high-order functions).
@@ -62,7 +62,7 @@ Aż 3 różne sposoby na deklarację funkcji, ale tyko jeden rządzi.
 JavaScript ma typy danych i warto je znać.
 
 ???
-Repetytorium z JS na początek, żebyśmy startowwali z tego samego poziomu.
+Repetytorium z JS na początek, żebyśmy startowali z tego samego poziomu.
 
 ---
 ## Funkcje w JS
@@ -79,7 +79,7 @@ Repetytorium z JS na początek, żebyśmy startowwali z tego samego poziomu.
   * Tail call optimization jest [nadal w powijakach](https://2ality.com/2015/06/tail-call-optimization.html).
 
 ???
-To są cechy czym fukcje w JS różnią się od funkcji w innych językach. Typowe WTF.
+To są cechy czym funkcje w JS różnią się od funkcji w innych językach. Typowe WTF.
 
 ---
 ## Deklarowanie funkcji
@@ -159,7 +159,7 @@ Najważniejsze to:
 * reduce()
 
 Wszystkie inne są pochodnymi powyższych.
-W szczgólności `map` i `reduce` która są podstawą do budowania pozostałych.
+W szczególności `map` i `reduce` która są podstawą do budowania pozostałych.
 
 ---
 
@@ -223,7 +223,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 ## Zadanie 2: map()
 
 Nazwy drużyn wyświetlane w TV muszą zawierać nazwę miasta.
-Napisz funckcję która doda nazwę miasta i zwróci nową listę meczów.
+Napisz funkcję która doda nazwę miasta i zwróci nową listę meczów.
 Użyj predefiniowanych zmiennych `matches` oraz `cities` jako danych wejściowych.
 
 Otwórz plik `zadania/2_map.js` i zaimplementuj brakującą funkcję.
@@ -279,7 +279,7 @@ const total = cart.reduce((accumulator, item) => accumulator += item.price, ship
 
 ## Zadanie 3: reduce() jako suma
 
-Napisz funckję reducera która zwróci ile goli padło w całym turnieju.
+Napisz funkcję reducera która zwróci ile goli padło w całym turnieju.
 
 Uwaga na mecz który jeszcze nie ma wyniku!
 
@@ -342,7 +342,7 @@ Jak wcześniej radziliście sobie z np. obliczaniem sumy?
 ---
 ## map() i reduce() graficznie
 
-![map() and reduce() used to make a sandwitch](https://clojurebridgelondon.github.io/workshop/images/map-reduce-sandwich.png)
+![map() and reduce() used to make a sandwich](https://clojurebridgelondon.github.io/workshop/images/map-reduce-sandwich.png)
 
 ---
 # 4. Kod deklaratywny vs imperatywny
@@ -350,10 +350,10 @@ Jak wcześniej radziliście sobie z np. obliczaniem sumy?
 Programowanie funkcyjne preferuje deklaratywne podejście do kodu.
 Oznacza to że logika jest wyrażona bez użycia instrukcji sterujących.
 
-Kod imperatywny zawera mnóstwo instrukcji opisujących poszczególne kroki,
+Kod imperatywny zawiera mnóstwo instrukcji opisujących poszczególne kroki,
 niezbędne w celu osiągnięcia rezultatu. Opisuje jak coś zrobić.
 
-Kod deklaratywny ukrywa instrukcje jak osiągnać cel, zamiast tego opisuje
+Kod deklaratywny ukrywa instrukcje jak osiągnąć cel, zamiast tego opisuje
 przepływ danych. Co zrobić, nie jak.
 
 ---
@@ -376,7 +376,7 @@ Math.max(4, 3, 2)
 
 ???
 Zazwyczaj takie wyrażenia będą przypisane do jakiegoś identyfikatora (zmiennej),
-zwracane w funckji, albo przekazywane do funkcji. Zanim to się jednak stanie,
+zwracane w funkcji, albo przekazywane do funkcji. Zanim to się jednak stanie,
 wyrażenie jest najpierw ewaluaowane (wykonywane), a przekazywany jest rezultat.
 
 ---
@@ -398,7 +398,7 @@ Tam są aż 3 instrukcje!
 ---
 ## Zadanie 5: Wyrażenia
 
-Zamiast używać instrukcji `if` użyj wyrażnia do filtrowania wyników.
+Zamiast używać instrukcji `if` użyj wyrażenia do filtrowania wyników.
 Dodatkowo nazwij swoje wyrażenia odpowiednio i zdefiniuj jako osobne funkcje.
 
 W rezultacie powinny powstać minimum 2 funkcje.
@@ -408,13 +408,13 @@ W rezultacie powinny powstać minimum 2 funkcje.
 
 Jakie zalety widzicie przy używaniu wyrażeń zamiast instrukcji? Jakie wady?
 
-Co daje nazywanie wyrażen (przypisywanie do zmiennej czy funkcji)?
+Co daje nazywanie wyrażeń (przypisywanie do zmiennej czy funkcji)?
 
 ---
 # 5. Funkcje wyższego rzędu (high-order functions).
 
 Funkcje wyższego rzędu (high-order functions) to takie, które przyjmują funkcje
-jako parametr lub zwracają funkcje. Czesto używane do:
+jako parametr lub zwracają funkcje. Często używane do:
 
 * Tworzenia narzędzi które mogą działać na różnych typach danych (np. `map()`).
 * Abstrakcji lub izolacji akcji, efektów, lub przetwarzania asynchronicznego (callback, promise), etc.
@@ -441,7 +441,7 @@ const names = entities.map(getName);
 ## Zadanie 6: map() z high-order function
 
 Stwórz funkcję, która będzie dodawała nazwę miasta tylko do jednego zespołu.
-Użyj fukcji wyższego rzędu żeby przekazać czy chodzi o `teamA` czy `teamB`.
+Użyj funkcji wyższego rzędu żeby przekazać czy chodzi o `teamA` czy `teamB`.
 
 Dodatkowo ukryj listę miast, żeby nie była dostępna w całym module.
 
@@ -461,7 +461,7 @@ Jakie przeszkody widzisz?
 Kompozycja funkcji (functional composition) to łączenie funkcji w celu uzyskania
 innej funkcji. Kompozycja przypomina używanie pipe, np. w Bash.
 
-Mając funkcje `f` i `g` kompozycja `f(g(x))` będzie obliczone od wewnąrz na zewnątrz,
+Mając funkcje `f` i `g` kompozycja `f(g(x))` będzie obliczone od wewnątrz na zewnątrz,
 inaczej od prawej do lewej strony. Zatem w kolejności:
 1. `x`
 2. `g`
@@ -475,7 +475,7 @@ Kompozycja funkcji to fundament FP.
 ## Partial application & currying
 
 Partial application to przekazanie nie wszystkich wymaganych parametrów funkcji,
-gdzie w efekcie otrzymujemy nową funckję, która przyjmie brakujące parametry.
+gdzie w efekcie otrzymujemy nową funkcję, która przyjmie brakujące parametry.
 
 Currying to specyficzna odmiana w FP, gdzie funkcje przyjmują tylko *jeden* argument,
 by koniec końców zwrócić wartość. Przykład:
@@ -527,7 +527,7 @@ h(20);
 ---
 ## Zadanie 7: Użycie compose()
 
-Zbudouj złożenie funkcji dodającą nazwę miasta dla `teamA` i `teamB` za pomocą
+Zbuduj złożenie funkcji dodającą nazwę miasta dla `teamA` i `teamB` za pomocą
 funkcji pomocniczej `compose()`.
 
 ---
@@ -538,7 +538,7 @@ Jak wrażenie o `compose()`? Wydaje się trudne, łatwe? Proste, skomplikowane?
 Jak porównacie użycie `compose()` z metod chaining (np. wielokrotne `map()`)?
 
 ???
-Użycie `compose()` pozwala stworzyć złożoną funckję, która nadal przetwarza jeden rekord.
+Użycie `compose()` pozwala stworzyć złożoną funkcję, która nadal przetwarza jeden rekord.
 
 Przy method chaining mamy wiele iteracji, więc gorszą wydajność.
 
@@ -555,7 +555,7 @@ https://medium.com/javascript-scene/curry-and-function-composition-2c208d774983
 Currying in JavaScript
 https://wsvincent.com/javascript-currying/
 
-Interactive Excersises in Functional Programming (and RxJS):
+Interactive Exercises in Functional Programming (and RxJS):
 http://reactivex.io/learnrx/
 
 [Funkcyjny frontend | Krzysztof Jendrzyca | FDD 2016](https://www.youtube.com/watch?v=UUeq8J9l0HI)
