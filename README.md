@@ -20,7 +20,7 @@ Odpalenie kodu: `Ctrl+K Q` lub komenda `Quokka.js: Start on current file`.
 
 W celu uruchomienia prezentacji lokalnie należy:
 
-1. Uruchomić serwer: `npm start`
+1. Uruchomić serwer: `node server.js`
 2. Otworzyć http://localhost:8000/index.html w przeglądarce.
 
 Wystarczy Node 10 lub nowszy. Nie ma zależności NPM ani dodatkowych bibliotek.
