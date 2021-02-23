@@ -336,7 +336,7 @@ Jak wcześniej radziliście sobie z np. obliczaniem sumy?
 * Wydaje się skomplikowane, bo to niskopoziomowe narzędzie.
 * Rezultatem `reduce()` może być wartość dowolnego typu, nawet array.
 * Tak, `map()` da się zbudować z użyciem `reduce()`.
-* `reduce()` rzadko będzie w kodzie biznesowym, raczej w fukcjach składowych.
+* `reduce()` rzadko będzie w kodzie biznesowym, raczej w funkcjach składowych.
 * Sprawne użycie `reduce()` wymaga przyzwyczajenia.
 
 ---
@@ -546,6 +546,17 @@ Przy method chaining mamy wiele iteracji, więc gorszą wydajność.
 ---
 # 7. Przydatne biblioteki i narzędzia
 
+__Lodash FP__ jeśli używacie już Lodash to ta wersja dodaje currying oraz `compose()` i `flow()`.
+
+__Ramda.js__ jest nastawiona na programowanie funkcyjne i zawiera wiele przydatnych gotowców jak `evolve()`.
+
+Interactive Exercises in Functional Programming (and RxJS):
+http://reactivex.io/learnrx/
+
+
+---
+## Więcej o kompozycji i currying
+
 Master the JavaScript Interview: What is Functional Programming?
 https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
 
@@ -555,15 +566,8 @@ https://medium.com/javascript-scene/curry-and-function-composition-2c208d774983
 Currying in JavaScript
 https://wsvincent.com/javascript-currying/
 
-Interactive Exercises in Functional Programming (and RxJS):
-http://reactivex.io/learnrx/
-
 [Funkcyjny frontend | Krzysztof Jendrzyca | FDD 2016](https://www.youtube.com/watch?v=UUeq8J9l0HI)
 
-Biblioteki:
-
-* Ramda.js
-* Lodash FP
 
 ---
 # Dziękuję za uwagę
