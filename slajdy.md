@@ -74,7 +74,7 @@ Repetytorium z JS na początek, żebyśmy startowali z tego samego poziomu.
   * Jeśli podamy mniej argumentów niż parametrów to brakujące będą `undefined`.
   * Przydatne do partial application i currying (więcej o tym później).
 * Standard ES2015 wprowadził domyślne wartości parametrów funkcji.
-* JS runtime jest oparty o stos, więc istnieje limit wywołań fukcji.
+* JS runtime jest oparty o stos, więc istnieje limit wywołań funkcji.
   * Trzeba uważać na błąd przepełniania stosu przy rekurencji.
   * Tail call optimization jest [nadal w powijakach](https://2ality.com/2015/06/tail-call-optimization.html).
 
@@ -102,19 +102,22 @@ const foo3 = (param = "def") => 3;
 
 Trzeci sposób jest preferowany, bo [rozwiązuje niektóre WTF z funkcjami](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/) w JS.
 
+???
+Zapamiętajcie trzeci sposób, bo będzie wykorzystany w zadaniach i przykładach.
+
 ---
 ## Typy w JS
 
 * Wbudowane typy proste (primitives):
-  * undefined : typeof instance === "undefined"
-  * Boolean : typeof instance === "boolean"
-  * Number : typeof instance === "number"
-  * String : typeof instance === "string"
-  * BigInt : typeof instance === "bigint"
-  * Symbol : typeof instance === "symbol"
-* null : typeof instance === "object". Special primitive used not as a data value.
-* Object : typeof instance === "object". Special non data but Structural type for any Constructed instance: new Object, new Array, new Map, new Set, new WeekMap, new WeakSet, new Date
-* Function : typeof instance === "function". Special shorthand for Functions, though every Function constructor is derived from Object constructor.
+  * undefined : `typeof instance === "undefined"`
+  * Boolean : `typeof instance === "boolean"`
+  * Number : `typeof instance === "number"`
+  * String : `typeof instance === "string"`
+  * BigInt : `typeof instance === "bigint"`
+  * Symbol : `typeof instance === "symbol"`
+* null : `typeof instance === "object"`. Special primitive used not as a data value.
+* Object : `typeof instance === "object"`. Special non data but Structural type for any Constructed instance: new Object, new Array, new Map, new Set, new WeekMap, new WeakSet, new Date
+* Function : `typeof instance === "function"`. Special shorthand for Functions, though every Function constructor is derived from Object constructor.
 * W JS typy są sprawdzane, ale dość luźno ;)
   * Powszechne jest *implicit type coercion* i tu [trzeba uważać](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/).
   * Uczulam na błąd `1 + undefined`, co daje `NaN` w rezultacie!
@@ -123,6 +126,9 @@ Trzeci sposób jest preferowany, bo [rozwiązuje niektóre WTF z funkcjami](http
 ---
 class: middle
 # Co to jest programowanie funkcyjne?
+
+???
+Pytanie do uczestników.
 
 ---
 ## Functional Programming
