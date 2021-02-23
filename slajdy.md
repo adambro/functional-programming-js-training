@@ -258,7 +258,9 @@ Postaraj się wyciągnąć odpowiedzi.
 ---
 # 3. Konwersja listy do pojedyńczej wartości
 
-TODO
+Obliczanie sumy produktów w koszyku.
+
+Grupowanie elementów listy po jakimś kluczu.
 
 ---
 ## Funkcja reduce()
@@ -289,8 +291,24 @@ Napisz funkcję reducera która zwróci ile goli padło w całym turnieju.
 
 Uwaga na mecz który jeszcze nie ma wyniku!
 
----
 
+---
+## Object.assign() use case
+
+Funkcja `Object.assign()` łączy przekazane obiekty od prawej do lewej i zwraca połączony obiekt.
+
+```js
+const price = { price: 99, promo: true };
+const name = { name: "Mega" };
+
+const prod = Object.assign(name, price);
+console.log(prod);
+```
+
+UWAGA: Pierwszy argument jest modyfikowany!
+
+
+---
 ## Funkcja reduce() do budowy obiektu z listy
 
 Efektem reduce nie musi być liczba, ale może być też obiekt.
@@ -315,8 +333,8 @@ const hashmap = entities.reduce(keyVal, {});
 ???
 To jest prymitywne rozwiązanie, ale działa. Wrócimy do niego później, przy kompozycji.
 
----
 
+---
 ## Zadanie 4: reduce() do budowy obiektu
 
 Zbuduj prostą tabelę ligową bazującą na liczbie strzelonych goli.
