@@ -25,6 +25,8 @@ const matchesForTv = matches.map(appendCityNameToTeams);
 console.table(matchesForTv);
 
 // Tests for the output.
+console.assert(matchesForTv.some(match => match.teamA.includes("Arsenal")), "Team names must be preserved.");
+
 const hasCity = (name = "") => name.includes("London") || name.includes("Manchester");
 const bothTeamsHaveCities = (match = {}) => hasCity(match.teamA) && hasCity(match.teamB);
 
