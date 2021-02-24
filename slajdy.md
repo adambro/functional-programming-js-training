@@ -5,6 +5,10 @@ class: center, middle
 
 Adam Brodziak
 
+???
+Slajdy w Remark.js :) Odpal `node server.js` dla prezentacji.
+Ten tekst będzie w notatkach prezentera.
+
 ---
 ## Jak szkolenie będzie wyglądać
 
@@ -118,9 +122,13 @@ Zapamiętajcie trzeci sposób, bo będzie wykorzystany w zadaniach i przykładac
 * null : `typeof instance === "object"`. Special primitive used not as a data value.
 * Object : `typeof instance === "object"`. Special non data but Structural type for any Constructed instance: new Object, new Array, new Map, new Set, new WeekMap, new WeakSet, new Date
 * Function : `typeof instance === "function"`. Special shorthand for Functions, though every Function constructor is derived from Object constructor.
+
+---
+## Type coercion w JS
+
 * W JS typy są sprawdzane, ale dość luźno ;)
-  * Powszechne jest *implicit type coercion* i tu [trzeba uważać](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/).
-  * Uczulam na błąd `1 + undefined`, co daje `NaN` w rezultacie!
+* Powszechne jest *implicit type coercion* i tu [trzeba uważać](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/).
+* Uczulam na błąd `1 + undefined`, co daje `NaN` w rezultacie!
 
 
 ---
@@ -306,6 +314,10 @@ console.log(prod);
 ```
 
 UWAGA: Pierwszy argument jest modyfikowany!
+
+???
+Jest [reguła ES Lint](https://github.com/jfmengels/eslint-plugin-fp/blob/master/docs/rules/no-mutating-assign.md) zabezpieczająca przed modyfikacją.
+Alternatywa to użycie [spread operator](https://adambrodziak.medium.com/use-js-object-spread-operator-instead-of-object-assign-pattern-in-node-8-125a4914f6dd).
 
 
 ---
